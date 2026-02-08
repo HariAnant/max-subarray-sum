@@ -8,11 +8,15 @@ public class MaximumSubarraySumCalculator {
         }
 
         int bestSoFar = input[0];
-        int bestEndingHere = input[0];
 
-        for (int i = 1; i < input.length; i++) {
-            bestEndingHere = Math.max(input[i], bestEndingHere + input[i]);
-            bestSoFar = Math.max(bestSoFar, bestEndingHere);
+        for (int i = 0; i < input.length; i++) {
+            int runningSum = 0;
+            for (int j = i; j < input.length; j++) {
+                runningSum += input[j];
+                if (runningSum > bestSoFar) {
+                    bestSoFar = runningSum;
+                }
+            }
         }
 
         return bestSoFar;
