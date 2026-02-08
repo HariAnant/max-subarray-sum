@@ -1,5 +1,5 @@
 package com.github.HariAnant;
 
-public class MaximumSubarraySumCalcuator {
+public class MaximumSubarraySumCalculator {
 
 }
