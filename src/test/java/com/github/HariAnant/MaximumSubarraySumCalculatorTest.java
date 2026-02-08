@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MaximumSubarraySumCalculatorTest {
 
@@ -18,5 +19,13 @@ public class MaximumSubarraySumCalculatorTest {
                         .maxSubarraySum(input);
 
         assertEquals(15, result);
+    }
+
+    // FR002 - Test with null input throws IllegalArgumentException
+    @Test
+    public void fr003_nullInput_throwsIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () ->
+                new MaximumSubarraySumCalculator()
+                        .maxSubarraySum(null));
     }
 }
