@@ -7,14 +7,16 @@ public class MaximumSubarraySumCalculator {
             throw new IllegalArgumentException("input must not be null or empty");
         }
 
-        int bestSoFar = input[0];
-        int bestEndingHere = input[0];
+        int maxSum = Integer.MIN_VALUE;
+        int prefixSum = 0;
+        int minPrefixSum = 0;
 
-        for (int i = 1; i < input.length; i++) {
-            bestEndingHere = Math.max(input[i], bestEndingHere + input[i]);
-            bestSoFar = Math.max(bestSoFar, bestEndingHere);
+        for (int value : input) {
+            prefixSum += value;
+            maxSum = Math.max(maxSum, prefixSum - minPrefixSum);
+            minPrefixSum = Math.min(minPrefixSum, prefixSum);
         }
 
-        return bestSoFar;
+        return maxSum;
     }
 }
