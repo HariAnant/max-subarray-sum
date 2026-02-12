@@ -1,4 +1,4 @@
-package com.github.HariAnant;
+package com.github.HariAnant.bruteforce;
 
 public class MaximumSubarraySumCalculator {
 
